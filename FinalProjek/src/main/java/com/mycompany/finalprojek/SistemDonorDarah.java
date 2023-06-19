@@ -43,8 +43,16 @@ public class SistemDonorDarah {
                     String nama = scanner.nextLine();
                     System.out.print("Masukkan Golongan Darah: ");
                     String golonganDarah = scanner.nextLine();
+                    
+                    System.out.print("Masukkan Umur: ");
+                    int umur = scanner.nextInt();
+                    
+                    if (umur < 17){
+                        System.out.println("Maaf, anda belum memenuhi persyaratan usia minimal.");
+                        break;
+                    }
 
-                    Donor donor = new Donor(nama, golonganDarah);
+                    Donor donor = new Donor(nama, golonganDarah, umur);
                     dataDonor.tambahDonor(donor);
                     System.out.println("Pendaftaran berhasil! Terima kasih, " + donor.getNama() + ".");
                     break;
@@ -86,7 +94,7 @@ public class SistemDonorDarah {
         } else {
             System.out.println("Daftar Donor:");
             for (Donor donor :             daftarDonor) {
-                System.out.println("Nama: " + donor.getNama() + ", Golongan Darah: " + donor.getGolonganDarah());
+                System.out.println("Nama: " + donor.getNama() + ", Golongan Darah: " + donor.getGolonganDarah() + ", Umur: " + donor.getUmur());
             }
         }
     }
@@ -98,7 +106,7 @@ public class SistemDonorDarah {
         } else {
             System.out.println("Pendonor dengan nama " + nama + ":");
             for (Donor donor : hasilPencarian) {
-                System.out.println("Nama: " + donor.getNama() + ", Golongan Darah: " + donor.getGolonganDarah());
+                System.out.println("Nama: " + donor.getNama() + ", Golongan Darah: " + donor.getGolonganDarah() + ", Umur: " + donor.getUmur());
             }
         }
     }
@@ -110,7 +118,7 @@ public class SistemDonorDarah {
         } else {
             System.out.println("Pendonor dengan golongan darah " + golonganDarah + ":");
             for (Donor donor : hasilPencarian) {
-                System.out.println("Nama: " + donor.getNama() + ", Golongan Darah: " + donor.getGolonganDarah());
+                System.out.println("Nama: " + donor.getNama() + ", Golongan Darah: " + donor.getGolonganDarah() + ", Umur: " + donor.getUmur());
             }
         }
     }
