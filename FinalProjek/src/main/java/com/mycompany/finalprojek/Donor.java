@@ -13,10 +13,12 @@ package com.mycompany.finalprojek;
 class Donor {
     private String nama;
     private String golonganDarah;
+    private int umur;
 
-    public Donor(String nama, String golonganDarah) {
+    public Donor(String nama, String golonganDarah, int umur) {
         this.nama = nama;
         this.golonganDarah = golonganDarah;
+        this.umur = umur;
     }
 
     public String getNama() {
@@ -25,6 +27,10 @@ class Donor {
 
     public String getGolonganDarah() {
         return golonganDarah;
+    }
+    
+    public int getUmur(){
+        return umur;
     }
 }
 
